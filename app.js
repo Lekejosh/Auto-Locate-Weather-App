@@ -6,7 +6,20 @@ function getWeather() {
   let api = "https://api.openweathermap.org/data/2.5/weather";
   let apiKey = "5d9839e1a8f5404983d4d4268519ad5a";
 
-  location.innerHTML = "Locating...";
+  var i = 0;
+  var txt = "Locating..."; /* The text */
+  var speed = 100; /* The speed/duration of the effect in milliseconds */
+
+  function typeWriter() {
+    if (i < txt.length) {
+      location.innerHTML += txt.charAt(i);
+      i++;
+      setTimeout(typeWriter, speed);
+    }
+  }
+  typeWriter();
+
+  //   location.innerHTML = "Locating...";
 
   navigator.geolocation.getCurrentPosition(success, error);
 
