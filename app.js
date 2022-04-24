@@ -9,7 +9,6 @@ function getWeather() {
   var i = 0;
   var txt = "Locating..."; /* The text */
   var speed = 100; /* The speed/duration of the effect in milliseconds */
-
   function typeWriter() {
     if (i < txt.length) {
       location.innerHTML += txt.charAt(i);
